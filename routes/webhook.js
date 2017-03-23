@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var chatService = require('../server/chatService');
+var userService = require('../server/userService');
 
 router.get('/', function(req, res, next) {
   if (chatService.authenticate(req)) {
@@ -18,7 +19,12 @@ if (data.object === 'page') {
     var timeOfEvent = entry.time;
     entry.messaging.forEach(function(event) {
       if (event.message) {
-        chatService.receivedMessage(event);
+        if (userService.isUserKnown(event.sender.id)) {
+          chatService.receivedMessage(event);
+        } else {
+          chatService.sendTextMessage(event.sender.id, "Bienvenue !");
+          userService.addUser(event.sender.id, 0);
+        }
       } else {
         console.log("Webhook received unknown event: ", event);
       }
