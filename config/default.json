@@ -3,5 +3,5 @@
   "weatherApiToken": "<insert your weather api token here>",
   "googleApiToken": "<insert your google geolocalisation api token here>",
   "pageAccessToken": "EAAD7vAyJvXEBAHM0AnqcSZAnz9dIPygLleMyktEYlRbDlZBbw7ZB5YZCiSte77QDa6YTjYmAYWQl7eeWtm6rEDCZCurU85tWUNdSSfEwA3BRx10VdXEbKe0SurF4dbsMZCCyXv5uxOaDAzDDasvXEOi2OZBIcmvJ1X8vnujB4gWNwZDZD",
-  "validationToken": "<insert your facebook validation token here>"
+  "validationToken": "81H1DQCu3t241KA38geksr4OQh2Ueqz0"
 }
