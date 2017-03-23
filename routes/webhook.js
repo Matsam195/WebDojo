@@ -24,7 +24,7 @@ if (data.object === 'page') {
       }
     });
   });
-  chatService.sendTextMessage(event.sender.id, event.message.text)
+  chatService.sendTextMessage(event.sender.id, "Ok !");
 }});
 
 module.exports = router;
