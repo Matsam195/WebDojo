@@ -10,13 +10,13 @@ router.get('/', function(req, res, next) {
   }
 });
 
-router.post('/webhook', function (req, res) {
+router.post('/', function (req, res) {
 var data = req.body;
 if (data.object === 'page') {
   data.entry.forEach(function(entry) {
     var pageID = entry.id;
     var timeOfEvent = entry.time;
-    entry.messaging.foreach(function(event) {
+    entry.messaging.forEach(function(event) {
       if (event.message) {
         chatService.receivedMessage(event);
       } else {
@@ -24,7 +24,7 @@ if (data.object === 'page') {
       }
     });
   });
-  chatService.sendTextMessage(event.sender.id, "Ok !");
+  res.sendStatus(200);
 }});
 
 module.exports = router;
